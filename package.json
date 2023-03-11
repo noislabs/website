@@ -1,5 +1,6 @@
 {
   "name": "nois-network-website",
+  "author": "Patrick Bauer",
   "version": "0.0.0",
   "private": true,
   "scripts": {
