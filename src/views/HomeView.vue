@@ -3,8 +3,6 @@
 
 <template>
   <main>
-    <div class="container mx-auto">
-      main container
-    </div>
+    <div class="container mx-auto" />
   </main>
 </template>
