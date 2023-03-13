@@ -3,10 +3,6 @@
 
 <template>
   <main>
-    <div class="container mx-auto">
-      <h1 class="font-bold">
-        NOIS Network
-      </h1>
-    </div>
+    <div class="container mx-auto" />
   </main>
 </template>

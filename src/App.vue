@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import AppParticles from '@/components/AppParticles.vue'
+import TheHeader from '@/components/TheHeader.vue'
 </script>
 
 <template>
-  <header>
-    header
-  </header>
+  <TheHeader />
 
   <RouterView />
+
+  <AppParticles />
 </template>
 
 <style scoped>
