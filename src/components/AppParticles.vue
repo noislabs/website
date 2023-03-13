@@ -53,7 +53,7 @@ const options = {
     move: {
       direction: 'none',
       enable: true,
-      outMode: 'absorb',
+      outMode: 'out',
       random: false,
       speed: 2,
       straight: false
