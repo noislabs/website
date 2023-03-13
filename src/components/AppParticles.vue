@@ -14,9 +14,9 @@ const options = {
   fpsLimit: 120,
   interactivity: {
     events: {
-      onClick: {
+      onHover: {
         enable: true,
-        mode: 'push'
+        mode: 'repulse'
       },
       resize: true
     },
@@ -53,7 +53,7 @@ const options = {
     move: {
       direction: 'none',
       enable: true,
-      outMode: 'bounce',
+      outMode: 'absorb',
       random: false,
       speed: 2,
       straight: false
