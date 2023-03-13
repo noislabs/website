@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import type { Engine } from 'tsparticles-engine'
-import { loadFull } from 'tsparticles'
+import { loadSlim } from 'tsparticles-slim'
 
-const particlesInit = async (engine: Engine) => {
-  await loadFull(engine)
-}
+const particlesInit = async (engine: Engine) => await loadSlim(engine)
 const options = {
   background: {
     color: {

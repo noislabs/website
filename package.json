@@ -12,8 +12,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "tsparticles": "^2.9.3",
     "tsparticles-engine": "^2.9.3",
+    "tsparticles-slim": "^2.9.3",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "vue3-particles": "^2.9.3"
