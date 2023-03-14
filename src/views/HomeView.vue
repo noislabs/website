@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import LiveBlock from '@/components/LiveBlock.vue'
 </script>
 
 <template>
   <main>
-    <div class="container mx-auto" />
+    <LiveBlock />
   </main>
 </template>
+
