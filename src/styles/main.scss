@@ -5,9 +5,13 @@
 @layer base {
   body {
     @apply bg-black;
-    @apply text-white;
+    @apply text-grey-50;
   }
-  h1 {
-    @apply text-4xl;
+
+  header,
+  main {
+    @apply px-10;
+    @apply max-w-screen-2xl;
+    @apply mx-auto;
   }
 }

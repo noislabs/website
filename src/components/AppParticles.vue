@@ -23,7 +23,7 @@ const options = {
         distance: 400,
         duration: 2,
         opacity: 0.8,
-        size: 40
+        size: 50
       },
       push: {
         quantity: 4
@@ -43,7 +43,7 @@ const options = {
       distance: 150,
       enable: true,
       opacity: 0.5,
-      width: 1
+      width: 0.2
     },
     collisions: {
       enable: true
@@ -64,14 +64,14 @@ const options = {
       value: 30
     },
     opacity: {
-      value: 0.5
+      value: 0.8
     },
     shape: {
       type: 'circle'
     },
     size: {
       random: true,
-      value: 5
+      value: 1.3
     }
   },
   detectRetina: true
