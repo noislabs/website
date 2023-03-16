@@ -1,6 +1,6 @@
 # NOIS Network Website
 
-This template should help get you started developing with Vue 3 in Vite.
+Nois Network brings random beacons to Cosmos blockchains without compromising security or usability by leveraging drand and IBC.
 
 ## Recommended IDE Setup
 
