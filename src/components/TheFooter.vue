@@ -7,7 +7,7 @@
     <div class="flex items-center justify-end text-xs">
       <span class="uppercase text-grey-700 font-light mr-1.5">Website by</span>
       <img
-        src="@/assets/design-dao/logo-icon.png"
+        src="@/assets/design-dao/designdao.png"
         alt="Design DAO"
         width="24"
         class="inline-block"
