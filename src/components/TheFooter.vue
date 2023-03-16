@@ -16,7 +16,11 @@
       <a href="https://nois.network">Brandkit</a>
     </div>
 
-    <div class="flex items-center max-sm:mt-6">
+    <a
+      href="https://designdao.io/"
+      target="_blank"
+      class="flex items-center max-sm:mt-6"
+    >
       <span class="uppercase text-grey-700 font-light mr-1.5">Website by</span>
       <img
         src="@/assets/design-dao/designdao.png"
@@ -26,7 +30,7 @@
         class="inline-block"
       >
       <span class="uppercase text-grey-50 ml-2.5">Design DAO</span>
-    </div>
+    </a>
   </footer>
 </template>
 
