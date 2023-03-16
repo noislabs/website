@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <footer class="flex max-sm:flex-col items-center sm:justify-between text-xs py-6">
+  <footer class="flex max-sm:flex-col items-center sm:justify-between text-xs py-6 pt-9">
     <div class="font-medium text-grey-600">
       <a
         href=""
