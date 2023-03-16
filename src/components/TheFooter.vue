@@ -6,14 +6,14 @@
   <footer class="flex max-sm:flex-col items-center sm:justify-between text-xs py-6 pt-9">
     <div class="font-medium text-grey-600">
       <a
-        href=""
+        href="https://nois.network"
         class="font-light mr-8"
       >
         Powered by
         <span class="font-medium">Nois Labs</span>
       </a>
 
-      <a href="">Brandkit</a>
+      <a href="https://nois.network">Brandkit</a>
     </div>
 
     <div class="flex items-center max-sm:mt-6">
