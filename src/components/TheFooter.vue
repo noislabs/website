@@ -7,13 +7,18 @@
     <div class="font-medium text-grey-600">
       <a
         href="https://nois.network"
-        class="font-light mr-8"
+        class="font-light mr-8 hover:text-grey-100 transition-colors"
       >
         Powered by
         <span class="font-medium">Nois Labs</span>
       </a>
 
-      <a href="https://nois.network">Brandkit</a>
+      <a
+        href="https://nois.network"
+        class="hover:text-grey-100 transition-colors"
+      >
+        Brandkit
+      </a>
     </div>
 
     <a
@@ -33,6 +38,3 @@
     </a>
   </footer>
 </template>
-
-<style lang="scss" scoped>
-</style>
