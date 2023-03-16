@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  @import 'font';
-
   body {
     @apply bg-black;
     @apply text-grey-50;
