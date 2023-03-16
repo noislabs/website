@@ -5,7 +5,7 @@ import AppButton from '@/components/AppButton.vue'
 
 <template>
   <main class="flex justify-center pt-52">
-    <div class="flex flex-row space-x-24 max-w-screen-lg">
+    <div class="flex flex-row space-x-24 max-w-screen-lg px-10">
       <LiveBlock class="basis-2/6" />
 
       <div class="basis-4/6">
