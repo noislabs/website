@@ -10,6 +10,7 @@
         src="@/assets/design-dao/designdao.png"
         alt="Design DAO"
         width="24"
+        height="18"
         class="inline-block"
       >
       <span class="uppercase text-grey-50 ml-2.5">Design DAO</span>
