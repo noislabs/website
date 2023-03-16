@@ -42,7 +42,6 @@ import AppButton from '@/components/AppButton.vue'</script>
       </div>
 
       <AppButton
-        text
         href="https://randomness.nois.network/"
         target="_blank"
         class="text-grey-600 hover:text-grey-100 transition-colors"

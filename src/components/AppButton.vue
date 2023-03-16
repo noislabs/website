@@ -3,7 +3,6 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   href?: string
-  text?: boolean
   target?: string
 }>()
 
@@ -15,22 +14,14 @@ const elementTag = computed(() => {
 const attrs = computed(() => ({
   href: props.href,
   target: props.target,
-  class: getClasses()
 }))
-
-function getClasses() {
-  const classes = ['inline-flex', 'items-center']
-
-  if (!props.text) classes.push('bg-grey-900 hover:bg-grey-800 transition-colors', 'px-4', 'py-2.5')
-
-  return classes
-}
 
 </script>
 <template>
   <component
     :is="elementTag"
     v-bind="attrs"
+    class="inline-flex items-center"
   >
     <slot />
 

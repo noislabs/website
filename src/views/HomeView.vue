@@ -18,9 +18,9 @@ import AppButton from '@/components/AppButton.vue'
         <p class="font-light text-grey-600 text-sm">
           Most Cosmos developers struggle to obtain secure and unbiased randomness, which can result in unreliable and untrustworthy systems. Nois provides a decentralized solution based on Drand that ensures a fair outcome for all, creating more reliable and trustworthy interchain applications.
         </p>
-        <div class="mt-9">
+        <div class="mt-11">
           <AppButton
-            class="mr-5"
+            class="mr-14"
             href="https://nois.network"
             target="_blank"
           >
