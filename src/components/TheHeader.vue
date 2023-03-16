@@ -41,6 +41,7 @@
           <a
             href="https://twitter.com/NoisNetwork"
             target="_blank"
+            aria-label="Twitter - Nois Network"
             class="hover:text-grey-600 transition-colors"
           >
             <svg
@@ -61,6 +62,7 @@
           <a
             href="https://chat.nois.network/"
             target="_blank"
+            aria-label="Discord - Nois Network"
             class="ml-5 hover:text-grey-600 transition-colors"
           >
             <svg
@@ -80,6 +82,7 @@
           <a
             href="https://github.com/"
             target="_blank"
+            aria-label="GitHub - Nois Network"
             class="ml-5 hover:text-grey-600 transition-colors"
           >
             <svg
