@@ -81,14 +81,8 @@ const options = {
 <template>
   <Particles
     id="particles"
+    class="relative -z-10"
     :options="options"
     :particles-init="particlesInit"
   />
 </template>
-
-<style lang="scss" scoped>
-#particles {
-  position: relative;
-  z-index: -1;
-}
-</style>
