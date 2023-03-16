@@ -3,15 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+  @import 'font';
+
   body {
     @apply bg-black;
     @apply text-grey-50;
+    @apply antialiased;
   }
 
   header,
-  main {
+  main,
+  footer {
     @apply px-10;
     @apply max-w-screen-2xl;
     @apply mx-auto;
+    @apply w-full;
   }
 }
