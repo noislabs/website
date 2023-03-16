@@ -44,7 +44,7 @@ import AppButton from '@/components/AppButton.vue'</script>
       <AppButton
         href="https://randomness.nois.network/"
         target="_blank"
-        class="text-grey-600 hover:text-grey-100 transition-colors"
+        class="text-grey-600 hover:text-grey-100"
       >
         Show feed
       </AppButton>

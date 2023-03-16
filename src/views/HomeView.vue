@@ -23,7 +23,7 @@ import AppButton from '@/components/AppButton.vue'
 
         <div class="mt-8 sm:mt-11">
           <AppButton
-            class="mr-14"
+            class="mr-14 hover:text-grey-600"
             href="https://nois.network"
             target="_blank"
           >
@@ -31,6 +31,7 @@ import AppButton from '@/components/AppButton.vue'
           </AppButton>
 
           <AppButton
+            class="hover:text-grey-600"
             href="https://nois.network"
             target="_blank"
           >
