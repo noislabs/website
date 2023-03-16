@@ -14,7 +14,8 @@
   header,
   main,
   footer {
-    @apply px-10;
+    @apply px-4;
+    @apply sm:px-10;
     @apply max-w-screen-2xl;
     @apply mx-auto;
     @apply w-full;

@@ -4,7 +4,7 @@ import ProgressBar from '@/components/ProgressBar.vue'
 import AppButton from '@/components/AppButton.vue'</script>
 
 <template>
-  <div>
+  <div class="max-lg:mb-20 max-lg:mt-8">
     <div class="font-mono n-live-block relative break-all uppercase">
       <span class="n-block origin-center">
         67041a3309268109175310b763f3c09f8802c572b4807a8b2675872d630facde
@@ -54,25 +54,42 @@ import AppButton from '@/components/AppButton.vue'</script>
 
 <style lang="scss" scoped>
 .n-live-block {
-  font-size: 42px;
-  line-height: 44px;
+  font-size: 28px;
+  line-height: 29px;
+
+  @screen sm {
+    font-size: 42px;
+    line-height: 44px;
+  }
 }
 
 .n-block {
   &:nth-child(2) {
-    transform: scale(.97);
+    transform: scale(.98);
     z-index: -1;
+
+    @screen sm {
+      transform: scale(.97);
+    }
   }
 
   &:nth-child(3) {
-    transform: scale(.95);
+    transform: scale(.96);
     z-index: -2;
+
+    @screen sm {
+      transform: scale(.95);
+    }
   }
 
   &:nth-child(4) {
-    transform: scale(.93);
+    transform: scale(.94);
     color: #E0DAEE;
     z-index: -3;
+
+    @screen sm {
+      transform: scale(.93);
+    }
   }
 }
 </style>

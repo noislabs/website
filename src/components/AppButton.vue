@@ -21,7 +21,7 @@ const attrs = computed(() => ({
   <component
     :is="elementTag"
     v-bind="attrs"
-    class="inline-flex items-center"
+    class="inline-flex items-center max-sm:text-sm"
   >
     <slot />
 

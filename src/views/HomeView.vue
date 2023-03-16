@@ -4,21 +4,24 @@ import AppButton from '@/components/AppButton.vue'
 </script>
 
 <template>
-  <main class="flex justify-center pt-52">
-    <div class="flex flex-row space-x-24 max-w-screen-lg px-10">
-      <LiveBlock class="basis-2/6" />
+  <main class="flex justify-center lg:items-center sm:mt-24 lg:mt-0">
+    <div class="lg:flex flex-row lg:space-x-24 max-w-screen-sm lg:max-w-screen-lg lg:px-10">
+      <LiveBlock class="lg:basis-2/6" />
 
-      <div class="basis-4/6">
-        <h2 class="text-7xl mb-2.5 font-satoshi font-bold">
-          Reliable Randomness
+      <div class="md:basis-4/6">
+        <h2 class="text-5xl sm:text-7xl mb-2.5 font-satoshi font-bold">
+          Reliable<br>Randomness
         </h2>
-        <h3 class="text-2xl mb-8 font-satoshi font-medium">
+
+        <h3 class="text-lg sm:text-2xl mb-5 sm:mb-8 font-satoshi font-medium">
           For the Interchain
         </h3>
+
         <p class="font-light text-grey-600 text-sm">
           Most Cosmos developers struggle to obtain secure and unbiased randomness, which can result in unreliable and untrustworthy systems. Nois provides a decentralized solution based on Drand that ensures a fair outcome for all, creating more reliable and trustworthy interchain applications.
         </p>
-        <div class="mt-11">
+
+        <div class="mt-8 sm:mt-11">
           <AppButton
             class="mr-14"
             href="https://nois.network"
