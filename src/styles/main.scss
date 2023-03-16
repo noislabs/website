@@ -21,3 +21,7 @@
     @apply w-full;
   }
 }
+
+#app {
+  max-height: -webkit-fill-available; // mobile Safari fix
+}
