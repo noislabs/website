@@ -4,7 +4,7 @@ import ProgressBar from '@/components/ProgressBar.vue'
 import AppButton from '@/components/AppButton.vue'</script>
 
 <template>
-  <div class="max-lg:mb-20 max-lg:mt-8">
+  <div class="max-lg:mt-14">
     <div class="font-mono n-live-block relative break-all uppercase">
       <span class="n-block origin-center">
         67041a3309268109175310b763f3c09f8802c572b4807a8b2675872d630facde
