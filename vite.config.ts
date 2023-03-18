@@ -18,11 +18,6 @@ export default defineConfig({
       plugins: [
         nodePolyfills()
       ],
-      output: {
-        manualChunks: {
-          vendor: ['@cosmjs/cosmwasm-stargate'],
-        },
-      },
     }
   }
 })
