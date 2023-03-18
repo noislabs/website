@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'
 
-const props = withDefaults(defineProps<{
-  value?: number
-}>(), {
-  value: 0
-})
+const props = defineProps<{
+  value: number
+}>()
 const progressElem = ref<HTMLElement | null>(null)
 const duration = 30
 
