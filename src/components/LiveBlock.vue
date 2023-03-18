@@ -6,7 +6,7 @@ import cosmWasmService from '@/services/cosmWasmService'
 
 const randomness = ref('')
 const verified = ref('')
-const progressValue = ref(0)
+const progressValue = ref(100)
 
 async function updateContent() {
   try {
@@ -32,7 +32,6 @@ async function runEveryTenAndFortySeconds() {
 
   if (currentSeconds === 10 || currentSeconds === 40) {
     await updateContent()
-    progressValue.value = 100
   }
 }
 
