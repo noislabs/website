@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watchEffect } from 'vue'
 
 const props = defineProps<{
   value: number
@@ -7,7 +7,7 @@ const props = defineProps<{
 const progressElem = ref<HTMLElement | null>(null)
 const duration = 30
 
-watch(() => props.value, () => {
+watchEffect(() => {
   // Recalculate the duration based on the new progress value
   let remainingDuration = duration - (duration * (100 - props.value) / 100)
 
