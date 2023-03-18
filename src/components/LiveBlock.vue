@@ -1,30 +1,60 @@
 <script setup lang="ts">
-
+import { ref } from 'vue'
+import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
 import ProgressBar from '@/components/ProgressBar.vue'
-import AppButton from '@/components/AppButton.vue'</script>
+import AppButton from '@/components/AppButton.vue'
+
+const rpcEndpoint = 'https://nois.rpc.bccnodes.com/'
+const contract = 'nois1a4g7duyu45m0y2ex7s0u8kad87w6ee70v3nz45mh89mjr7zae4pqffrtcz'
+const client = await CosmWasmClient.connect(rpcEndpoint)
+const query = { beacons_desc: { start_after: null, limit: 1 } }
+const randomness = ref('')
+
+async function getRandomness() {
+  try {
+    const { beacons } = await client.queryContractSmart(contract, query)
+
+    if (!beacons) return
+
+    const [beacon] = beacons // always 1 element because we set limit to 1 above
+
+    randomness.value = beacon.randomness
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+async function runEveryTenAndFortySeconds() {
+  const currentSeconds = new Date().getSeconds()
+
+  if (currentSeconds === 10 || currentSeconds === 40) await getRandomness()
+}
+
+await getRandomness()
+setInterval(runEveryTenAndFortySeconds, 1000)
+</script>
 
 <template>
   <div class="max-lg:mt-14">
     <div class="font-mono n-live-block relative break-all uppercase">
       <span class="n-block origin-center">
-        67041a3309268109175310b763f3c09f8802c572b4807a8b2675872d630facde
+        {{ randomness }}
       </span>
 
       <span class="absolute top-0 left-0 w-full opacity-40 text-grey-500 n-block">
-        67041a3309268109175310b763f3c09f8802c572b4807a8b2675872d630facde
+        {{ randomness }}
       </span>
 
       <span class="absolute top-0 left-0 w-full opacity-20 text-grey-500 n-block">
-        67041a3309268109175310b763f3c09f8802c572b4807a8b2675872d630facde
+        {{ randomness }}
       </span>
 
       <span class="absolute top-0 left-0 w-full opacity-10 text-grey-500 n-block">
-        67041a3309268109175310b763f3c09f8802c572b4807a8b2675872d630facde
+        {{ randomness }}
       </span>
     </div>
 
     <ProgressBar
-      value="80"
       class="my-4"
     />
 

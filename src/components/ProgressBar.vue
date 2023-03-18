@@ -1,9 +1,4 @@
 <script setup lang="ts">
-withDefaults(defineProps<{
-  value: number | string
-}>(), {
-  value: 0
-})
 </script>
 
 <template>
@@ -15,7 +10,7 @@ withDefaults(defineProps<{
   background-image: repeating-linear-gradient(to left, theme('colors.grey.800') 0%, theme('colors.grey.800') 50%, theme('colors.grey.50') 50%, theme('colors.grey.50') 100%);
   background-size: 200% auto;
   background-position: 0 100%;
-  animation: progressAnim linear 6s infinite;
+  animation: progressAnim linear 30s infinite;
 }
 
 @keyframes progressAnim {
