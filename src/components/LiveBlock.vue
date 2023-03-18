@@ -1,22 +1,27 @@
 <script setup lang="ts">
-import { ref, onBeforeMount } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 import ProgressBar from '@/components/ProgressBar.vue'
 import AppButton from '@/components/AppButton.vue'
 import cosmWasmService from '@/services/cosmWasmService'
 
 const randomness = ref('')
 const verified = ref('')
+const progressValue = ref(0)
 
 async function updateContent() {
   try {
+    progressValue.value = 0
     const { beacons } = await cosmWasmService.getRandomness()
 
     if (!beacons) return
 
     const [beacon] = beacons // always 1 element because we set limit to 1 above
+    const verifiedDate = new Date(Number(beacon.verified.slice(0, -6)))
 
     randomness.value = beacon.randomness
-    verified.value = formatDate(new Date(Number(beacon.verified.slice(0, -6))))
+    verified.value = formatDate(verifiedDate)
+
+    progressValue.value = 100
   } catch (err) {
     console.log(err)
   }
@@ -25,7 +30,10 @@ async function updateContent() {
 async function runEveryTenAndFortySeconds() {
   const currentSeconds = new Date().getSeconds()
 
-  if (currentSeconds === 10 || currentSeconds === 40) await updateContent()
+  if (currentSeconds === 10 || currentSeconds === 40) {
+    await updateContent()
+    progressValue.value = 100
+  }
 }
 
 function formatDate(date: Date) {
@@ -38,7 +46,14 @@ function formatDate(date: Date) {
 onBeforeMount(async () => {
   await cosmWasmService.connect()
   await updateContent()
-  setInterval(runEveryTenAndFortySeconds, 1000)
+  setInterval(runEveryTenAndFortySeconds, 1_000)
+
+  const currentSeconds = new Date().getSeconds()
+  const nextCall = currentSeconds < 10 ? 10 : currentSeconds < 40 ? 40 : 70
+  const remainingTime = nextCall - currentSeconds
+  const percentage = (remainingTime / 30) * 100
+
+  progressValue.value = Number(percentage.toFixed(2))
 })
 
 </script>
@@ -64,6 +79,7 @@ onBeforeMount(async () => {
     </div>
 
     <ProgressBar
+      :value="progressValue"
       class="my-4"
     />
 
@@ -94,11 +110,14 @@ onBeforeMount(async () => {
 .n-live-block {
   font-size: 28px;
   line-height: 29px;
-  min-height: 264px;
 
   @screen sm {
     font-size: 42px;
     line-height: 44px;
+  }
+
+  @screen lg {
+    min-height: 264px;
   }
 }
 
