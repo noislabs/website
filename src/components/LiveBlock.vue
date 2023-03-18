@@ -36,6 +36,7 @@ function formatDate(date: Date) {
 }
 
 onBeforeMount(async () => {
+  await cosmWasmService.connect()
   await updateContent()
   setInterval(runEveryTenAndFortySeconds, 1000)
 })
