@@ -6,9 +6,7 @@ import AppButton from '@/components/AppButton.vue'
 <template>
   <main class="flex justify-center lg:items-center sm:mt-5 lg:mt-0 max-lg:mb-6">
     <div class="flex flex-col-reverse max-lg:justify-end lg:flex-row lg:space-x-24 max-w-screen-sm lg:max-w-screen-lg lg:px-10">
-      <Suspense>
-        <LiveBlock class="lg:basis-2/6 max-sm:mt-14 max-lg:mt-20" />
-      </Suspense>
+      <LiveBlock class="lg:basis-2/6 max-sm:mt-14 max-lg:mt-20" />
 
       <div class="lg:basis-4/6">
         <h2 class="text-5xl sm:text-7xl mb-2.5 font-satoshi font-bold">

@@ -1,19 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
+import { ref, onBeforeMount } from 'vue'
 import ProgressBar from '@/components/ProgressBar.vue'
 import AppButton from '@/components/AppButton.vue'
+import cosmWasmService from '@/services/cosmWasmService'
 
-const rpcEndpoint = 'https://nois.rpc.bccnodes.com/'
-const contract = 'nois1a4g7duyu45m0y2ex7s0u8kad87w6ee70v3nz45mh89mjr7zae4pqffrtcz'
-const client = await CosmWasmClient.connect(rpcEndpoint)
-const query = { beacons_desc: { start_after: null, limit: 1 } }
 const randomness = ref('')
 const verified = ref('')
 
-async function getRandomness() {
+async function updateContent() {
   try {
-    const { beacons } = await client.queryContractSmart(contract, query)
+    const { beacons } = await cosmWasmService.getRandomness()
 
     if (!beacons) return
 
@@ -29,7 +25,7 @@ async function getRandomness() {
 async function runEveryTenAndFortySeconds() {
   const currentSeconds = new Date().getSeconds()
 
-  if (currentSeconds === 10 || currentSeconds === 40) await getRandomness()
+  if (currentSeconds === 10 || currentSeconds === 40) await updateContent()
 }
 
 function formatDate(date: Date) {
@@ -39,8 +35,11 @@ function formatDate(date: Date) {
   return `${dateString} ${timeString}`
 }
 
-await getRandomness()
-setInterval(runEveryTenAndFortySeconds, 1000)
+onBeforeMount(async () => {
+  await updateContent()
+  setInterval(runEveryTenAndFortySeconds, 1000)
+})
+
 </script>
 
 <template>
@@ -94,6 +93,7 @@ setInterval(runEveryTenAndFortySeconds, 1000)
 .n-live-block {
   font-size: 28px;
   line-height: 29px;
+  min-height: 264px;
 
   @screen sm {
     font-size: 42px;
