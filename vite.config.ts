@@ -17,7 +17,12 @@ export default defineConfig({
     rollupOptions: {
       plugins: [
         nodePolyfills()
-      ]
+      ],
+      output: {
+        manualChunks: {
+          vendor: ['@cosmjs/cosmwasm-stargate'],
+        },
+      },
     }
   }
 })
