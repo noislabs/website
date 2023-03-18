@@ -9,6 +9,7 @@ const contract = 'nois1a4g7duyu45m0y2ex7s0u8kad87w6ee70v3nz45mh89mjr7zae4pqffrtc
 const client = await CosmWasmClient.connect(rpcEndpoint)
 const query = { beacons_desc: { start_after: null, limit: 1 } }
 const randomness = ref('')
+const verified = ref('')
 
 async function getRandomness() {
   try {
@@ -19,6 +20,7 @@ async function getRandomness() {
     const [beacon] = beacons // always 1 element because we set limit to 1 above
 
     randomness.value = beacon.randomness
+    verified.value = formatDate(new Date(Number(beacon.verified.slice(0, -6))))
   } catch (err) {
     console.log(err)
   }
@@ -28,6 +30,13 @@ async function runEveryTenAndFortySeconds() {
   const currentSeconds = new Date().getSeconds()
 
   if (currentSeconds === 10 || currentSeconds === 40) await getRandomness()
+}
+
+function formatDate(date: Date) {
+  const dateString = date.toLocaleDateString('en-US')
+  const timeString = date.toLocaleTimeString('en-US', { hourCycle: 'h24' })
+
+  return `${dateString} ${timeString}`
 }
 
 await getRandomness()
@@ -66,8 +75,7 @@ setInterval(runEveryTenAndFortySeconds, 1000)
         </span>
 
         <span class="text-sm font-light text-grey-600">
-          <span class="font-bold">Live:</span>
-          Block 23.123
+          {{ verified }}
         </span>
       </div>
 
