@@ -36,8 +36,8 @@ async function runEveryTenAndFortySeconds() {
 }
 
 function formatDate(date: Date) {
-  const dateString = date.toLocaleDateString('en-US')
-  const timeString = date.toLocaleTimeString('en-US', { hourCycle: 'h24' })
+  const dateString = date.toLocaleDateString(navigator.language ?? 'en-US')
+  const timeString = date.toLocaleTimeString(navigator.language ?? 'en-US', { hourCycle: 'h24' })
 
   return `${dateString} ${timeString}`
 }
