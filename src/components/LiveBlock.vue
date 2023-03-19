@@ -5,7 +5,7 @@ import AppButton from '@/components/AppButton.vue'
 import cosmWasmService from '@/services/cosmWasmService'
 
 const randomnessElem = ref<HTMLElement | null>(null)
-const animationDuration = 250
+const animationDuration = 300
 const randomness = ref('')
 const verified = ref('')
 const progressValue = ref(100)
@@ -15,14 +15,13 @@ function animateRandomnessChange() {
 
   randomnessElem.value.animate(
     [
-      { opacity: 1 },
-      { opacity: 0 },
-      { opacity: 1 },
+      { opacity: 1, transform: 'scale(1)' },
+      { opacity: 0, transform: 'scale(.99)'  },
+      { opacity: 1, transform: 'scale(1)'  },
     ],
     {
       duration: animationDuration,
       fill: 'forwards',
-      easing: 'ease',
       iterations: 1
     }
   )
