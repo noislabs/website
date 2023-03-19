@@ -84,7 +84,7 @@
         </a>
 
         <a
-          href="https://github.com/"
+          href="https://github.com/noislabs"
           target="_blank"
           aria-label="GitHub - Nois Network"
           class="ml-5 hover:text-grey-600 transition-colors"
