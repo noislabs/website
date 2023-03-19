@@ -6,19 +6,26 @@ import cosmWasmService from '@/services/cosmWasmService'
 
 const randomnessElem = ref<HTMLElement | null>(null)
 const animationDuration = 300
-const randomness = ref('')
+const randomness = ref('0000000000000000000000000000000000000000000000000000000000000000')
 const verified = ref('')
 const progressValue = ref(100)
 
-function animateRandomnessChange() {
+function animateRandomnessChange(init: boolean) {
   if (!randomnessElem.value) return
 
+  const keyframes = [
+    { opacity: 1, transform: 'scale(1)' },
+    { opacity: 0, transform: 'scale(.99)'  },
+    { opacity: 1, transform: 'scale(1)'  },
+  ]
+
+  if (init) {
+    keyframes.shift()
+    randomnessElem.value.classList.remove('opacity-0')
+  }
+
   randomnessElem.value.animate(
-    [
-      { opacity: 1, transform: 'scale(1)' },
-      { opacity: 0, transform: 'scale(.99)'  },
-      { opacity: 1, transform: 'scale(1)'  },
-    ],
+    keyframes,
     {
       duration: animationDuration,
       fill: 'forwards',
@@ -27,7 +34,7 @@ function animateRandomnessChange() {
   )
 }
 
-async function updateContent() {
+async function updateContent(init = false) {
   try {
     const { beacons } = await cosmWasmService.getRandomness()
 
@@ -36,12 +43,12 @@ async function updateContent() {
     const [beacon] = beacons // always 1 element because we set limit to 1 above
     const verifiedDate = new Date(Number(beacon.verified.slice(0, -6)))
 
-    animateRandomnessChange()
+    animateRandomnessChange(init)
 
     setTimeout(() => {
       randomness.value = beacon.randomness
       verified.value = formatDate(verifiedDate)
-    }, animationDuration / 2)
+    }, init ? 0 : animationDuration / 2)
 
     progressValue.value = 100
   } catch (err) {
@@ -66,7 +73,7 @@ function formatDate(date: Date) {
 
 onBeforeMount(async () => {
   await cosmWasmService.connect()
-  await updateContent()
+  await updateContent(true)
   setInterval(runEveryTenAndFortySeconds, 1_000)
 
   const currentSeconds = new Date().getSeconds()
@@ -83,7 +90,7 @@ onBeforeMount(async () => {
   <div class="max-lg:mt-14">
     <div
       ref="randomnessElem"
-      class="font-mono n-randomness-wrapper relative break-all uppercase"
+      class="font-mono n-randomness-wrapper relative break-all uppercase opacity-0"
     >
       <span class="n-randomness origin-center">
         {{ randomness }}
@@ -134,15 +141,10 @@ onBeforeMount(async () => {
 .n-randomness-wrapper {
   font-size: 28px;
   line-height: 29px;
-  min-height: 58px;
 
   @screen sm {
     font-size: 42px;
     line-height: 44px;
-  }
-
-  @screen lg {
-    min-height: 264px;
   }
 }
 
