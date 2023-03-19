@@ -29,7 +29,6 @@ function animateRandomnessChange() {
 
 async function updateContent() {
   try {
-    progressValue.value = 0
     const { beacons } = await cosmWasmService.getRandomness()
 
     if (!beacons) return
