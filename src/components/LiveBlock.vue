@@ -105,7 +105,7 @@ onBeforeMount(async () => {
 
     <ProgressBar
       :value="progressValue"
-      class="my-4"
+      class="mt-4 mb-2"
     />
 
     <div class="flex justify-between">
@@ -135,6 +135,7 @@ onBeforeMount(async () => {
 .n-randomness-wrapper {
   font-size: 28px;
   line-height: 29px;
+  min-height: 58px;
 
   @screen sm {
     font-size: 42px;
