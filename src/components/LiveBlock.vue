@@ -15,8 +15,8 @@ function animateRandomnessChange(init: boolean) {
 
   const keyframes = [
     { opacity: 1, transform: 'scale(1)' },
-    { opacity: 0, transform: 'scale(.99)'  },
-    { opacity: 1, transform: 'scale(1)'  },
+    { opacity: 0, transform: 'scale(.99)' },
+    { opacity: 1, transform: 'scale(1)' }
   ]
 
   if (init) {
