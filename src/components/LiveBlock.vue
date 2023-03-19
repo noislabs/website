@@ -4,9 +4,29 @@ import ProgressBar from '@/components/ProgressBar.vue'
 import AppButton from '@/components/AppButton.vue'
 import cosmWasmService from '@/services/cosmWasmService'
 
+const randomnessElem = ref<HTMLElement | null>(null)
+const animationDuration = 250
 const randomness = ref('')
 const verified = ref('')
 const progressValue = ref(100)
+
+function animateRandomnessChange() {
+  if (!randomnessElem.value) return
+
+  randomnessElem.value.animate(
+    [
+      { opacity: 1 },
+      { opacity: 0 },
+      { opacity: 1 },
+    ],
+    {
+      duration: animationDuration,
+      fill: 'forwards',
+      easing: 'ease',
+      iterations: 1
+    }
+  )
+}
 
 async function updateContent() {
   try {
@@ -18,8 +38,12 @@ async function updateContent() {
     const [beacon] = beacons // always 1 element because we set limit to 1 above
     const verifiedDate = new Date(Number(beacon.verified.slice(0, -6)))
 
-    randomness.value = beacon.randomness
-    verified.value = formatDate(verifiedDate)
+    animateRandomnessChange()
+
+    setTimeout(() => {
+      randomness.value = beacon.randomness
+      verified.value = formatDate(verifiedDate)
+    }, animationDuration / 2)
 
     progressValue.value = 100
   } catch (err) {
@@ -59,20 +83,23 @@ onBeforeMount(async () => {
 
 <template>
   <div class="max-lg:mt-14">
-    <div class="font-mono n-live-block relative break-all uppercase">
-      <span class="n-block origin-center">
+    <div
+      ref="randomnessElem"
+      class="font-mono n-randomness-wrapper relative break-all uppercase"
+    >
+      <span class="n-randomness origin-center">
         {{ randomness }}
       </span>
 
-      <span class="absolute top-0 left-0 w-full opacity-40 text-grey-500 n-block">
+      <span class="absolute top-0 left-0 w-full opacity-40 text-grey-500 n-randomness">
         {{ randomness }}
       </span>
 
-      <span class="absolute top-0 left-0 w-full opacity-20 text-grey-500 n-block">
+      <span class="absolute top-0 left-0 w-full opacity-20 text-grey-500 n-randomness">
         {{ randomness }}
       </span>
 
-      <span class="absolute top-0 left-0 w-full opacity-10 text-grey-500 n-block">
+      <span class="absolute top-0 left-0 w-full opacity-10 text-grey-500 n-randomness">
         {{ randomness }}
       </span>
     </div>
@@ -106,7 +133,7 @@ onBeforeMount(async () => {
 </template>
 
 <style lang="scss" scoped>
-.n-live-block {
+.n-randomness-wrapper {
   font-size: 28px;
   line-height: 29px;
 
@@ -120,7 +147,7 @@ onBeforeMount(async () => {
   }
 }
 
-.n-block {
+.n-randomness {
   &:nth-child(2) {
     transform: scale(.98);
     z-index: -1;
