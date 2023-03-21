@@ -5,13 +5,12 @@
 <template>
   <footer class="flex max-sm:flex-col text-grey-600 items-center sm:justify-between text-xs py-6 pt-9">
     <div class="font-medium">
-      <a
-        href="https://nois.network"
-        class="font-light mr-8 hover:text-grey-100 transition-colors"
+      <span
+        class="font-light mr-8"
       >
         Powered by
         <span class="font-medium">Nois Labs</span>
-      </a>
+      </span>
 
       <a
         href="/Nois_Brandkit.zip"
