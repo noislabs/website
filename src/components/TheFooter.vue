@@ -14,7 +14,7 @@
       </a>
 
       <a
-        href="https://nois.network"
+        href="https://www.dropbox.com/sh/3xb91lasrylbhcp/AABHCdK8i_0PgWPhPIT3_wI_a?dl=0"
         class="hover:text-grey-100 transition-colors"
       >
         Brandkit
