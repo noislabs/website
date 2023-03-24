@@ -1,7 +1,7 @@
 import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
 
-const rpcEndpoint = 'https://nois.rpc.bccnodes.com/'
-const contract = 'nois1a4g7duyu45m0y2ex7s0u8kad87w6ee70v3nz45mh89mjr7zae4pqffrtcz'
+const rpcEndpoint = 'https://nois-004.rpc.bccnodes.com/'
+const contract = 'nois16peq3sftghumkja7nu32ztjy0ew4vsnshxfhcv6sxq573ta08gwsgldepm'
 let client: CosmWasmClient | null = null
 const query = { beacons_desc: { start_after: null, limit: 1 } }
 
