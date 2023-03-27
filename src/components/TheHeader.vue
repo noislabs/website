@@ -43,9 +43,9 @@
 
       <div class="flex items-center max-md:basis-1/2 md:ml-10 max-md:order-2 max-md:justify-end">
         <a
-          href="https://twitter.com/NoisNetwork"
+          href="https://twitter.com/NoisRNG"
           target="_blank"
-          aria-label="Twitter - Nois Network"
+          aria-label="Twitter - Nois"
           class="hover:text-grey-600 transition-colors"
         >
           <svg
