@@ -35,7 +35,7 @@
         </a>
         <a
           class="ml-7 md:ml-8 hover:text-grey-600 transition-colors"
-          href="https://explorer.mcbnode.online/nois/staking"
+          href="https://explorer.mcbnode.online/nois-mainnet"
         >
           Block Explorer
         </a>
