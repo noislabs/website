@@ -1,6 +1,6 @@
 import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
 
-const rpcEndpoint = 'https://nois-mainnet-rpc.bccnodes.com/'
+const rpcEndpoint = 'https://rpc.cosmos.directory/nois/'
 const contract = 'nois19w26q6n44xqepduudfz2xls4pc5lltpn6rxu34g0jshxu3rdujzsj7dgu8'
 
 let client: CosmWasmClient | null = null
