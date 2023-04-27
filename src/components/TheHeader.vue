@@ -4,10 +4,10 @@
 
 <template>
   <header class="max-sm:pt-4 py-9">
-    <div class="flex max-md:flex-wrap items-center justify-between">
+    <div class="flex max-[899px]:flex-wrap items-center justify-between">
       <RouterLink
         :to="{ name: 'home' }"
-        class="max-md:basis-1/2 max-md:order-1"
+        class="max-[899px]:basis-1/2 max-[899px]:order-1"
       >
         <img
           src="@/assets/logo/logo-small.svg"
@@ -17,36 +17,57 @@
         >
       </RouterLink>
 
-      <div class="grow max-md:hidden" />
+      <div class="grow max-[899px]:hidden" />
 
-      <nav class="max-md:flex max-md:justify-center text-sm max-md:basis-full max-md:order-3 max-md:mt-6">
+      <nav class="max-[899px]:flex max-[899px]:justify-center text-sm max-[899px]:basis-full max-[899px]:order-3 max-[899px]:mt-6">
         <a
-          class="md:ml-8 hover:text-grey-600 transition-colors"
+          class="min-[900px]:ml-8 hover:text-grey-600 transition-colors"
           href="https://docs.nois.network/"
         >
           Documentation
         </a>
 
         <a
-          class="ml-7 md:ml-8 hover:text-grey-600 transition-colors"
+          class="ml-7 min-[900px]:ml-8 hover:text-grey-600 transition-colors"
           href="https://whitepaper.nois.network/"
         >
           Whitepaper
         </a>
         <a
-          class="ml-7 md:ml-8 hover:text-grey-600 transition-colors"
+          class="ml-7 min-[900px]:ml-8 hover:text-grey-600 transition-colors"
           href="https://explorer.mcbnode.online/nois-mainnet"
         >
           Block Explorer
         </a>
       </nav>
 
-      <div class="flex items-center max-md:basis-1/2 md:ml-10 max-md:order-2 max-md:justify-end">
+      <div class="flex items-center max-[899px]:basis-1/2 min-[900px]:ml-10 max-[899px]:order-2 max-[899px]:justify-end max-sm:scale-90 max-sm:origin-right">
+        <a
+          href="https://scripta.network/@noislabs"
+          target="_blank"
+          aria-label="Scripta - Nois"
+          class="hover:text-grey-600 transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 15 26"
+            width="28"
+            height="26"
+          >
+            <path
+              fill="currentColor"
+              d="m14.452 18.25-1.156-2.002-1.794-3.107a.697.697 0 0 0-.594-.342H4.497L1.494 7.597l3.003-5.201h6.006l3.003 5.201-1.44 2.494c-.447.775.754 1.469 1.202.693l1.428-2.473c.2-.347.433-.677.196-1.087l-.44-.763-2.95-5.11a.696.696 0 0 0-.594-.342H5.097c-.378 0-1.005-.108-1.352.095-.325.19-.525.73-.703 1.037L1.886 4.143.092 7.25a.7.7 0 0 0 .003.698l3.403 5.895c.04.07.087.123.138.17.018.017.034.034.055.049.016.012.034.021.052.031.02.013.041.026.064.036.018.008.038.013.056.018a.71.71 0 0 0 .228.039h6.412l3.003 5.2-3.003 5.202H4.497l-3.003-5.201 1.386-2.4c.447-.776-.754-1.47-1.202-.694L.092 19.04a.7.7 0 0 0 .002.698l1.733 3.001L3 24.771c.187.326.402.912.749 1.112.326.188.892.093 1.248.093h5.9a.701.701 0 0 0 .606-.347l1.732-3.001 1.174-2.032c.187-.325.588-.805.59-1.204.003-.38-.37-.832-.548-1.141Z"
+            />
+            <path fill="currentColor" d="M4.461 4.47a.87.87 0 1 0 1.74 0 .87.87 0 0 0-1.74 0ZM10.26 16.463a.87.87 0 1 0-1.741 0 .87.87 0 0 0 1.74 0Z" />
+          </svg>
+        </a>
+
         <a
           href="https://twitter.com/NoisRNG"
           target="_blank"
           aria-label="Twitter - Nois"
-          class="hover:text-grey-600 transition-colors"
+          class="ml-5 hover:text-grey-600 transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +81,6 @@
               d="M28 2.604c-1.03.443-2.137.74-3.3.875A5.6 5.6 0 0 0 27.228.406a11.75 11.75 0 0 1-3.649 1.348A5.828 5.828 0 0 0 19.385 0c-3.709 0-6.434 3.346-5.596 6.819-4.773-.232-9.006-2.442-11.84-5.803-1.504 2.497-.78 5.762 1.777 7.416a5.87 5.87 0 0 1-2.6-.695c-.063 2.573 1.844 4.98 4.607 5.516a5.95 5.95 0 0 1-2.595.094c.73 2.207 2.852 3.812 5.367 3.857-2.415 1.83-5.458 2.648-8.505 2.3A16.67 16.67 0 0 0 8.806 22c10.666 0 16.691-8.71 16.328-16.52A11.49 11.49 0 0 0 28 2.604Z"
             />
           </svg>
-
         </a>
 
         <a
