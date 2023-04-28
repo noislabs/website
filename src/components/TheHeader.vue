@@ -7,7 +7,7 @@
     <div class="flex max-[899px]:flex-wrap items-center justify-between">
       <RouterLink
         :to="{ name: 'home' }"
-        class="max-[899px]:basis-1/2 max-[899px]:order-1"
+        class="max-[899px]:basis-auto max-[899px]:order-1"
       >
         <img
           src="@/assets/logo/logo-small.svg"
