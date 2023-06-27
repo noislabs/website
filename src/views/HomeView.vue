@@ -32,7 +32,7 @@ import AppButton from '@/components/AppButton.vue'
 
           <AppButton
             class="hover:text-grey-600"
-            href="https://docs.nois.network/use_nois_randomness.html"
+            href="https://docs.nois.network/dapp_devs/use_nois_randomness.html"
             target="_blank"
           >
             Quick Start Guide
