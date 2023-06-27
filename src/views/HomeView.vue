@@ -24,7 +24,7 @@ import AppButton from '@/components/AppButton.vue'
         <div class="mt-6 sm:mt-9">
           <AppButton
             class="mr-10 sm:mr-14 hover:text-grey-600"
-            href="https://docs.nois.network"
+            href="https://docs.nois.network/how_it_works.html"
             target="_blank"
           >
             See how it works
