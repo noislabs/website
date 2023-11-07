@@ -35,7 +35,7 @@
         </a>
         <a
           class="ml-7 min-[900px]:ml-8 hover:text-grey-600 transition-colors"
-          href="https://explorer.mcbnode.online/nois-mainnet"
+          href="https://nois.explorers.guru"
         >
           Block Explorer
         </a>
